@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "55a30fce-5100-4fed-a220-eeedfa8fdb0d",
+		"name": "Yummi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@yummi.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/{{v}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{v}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/{{v}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{v}}",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Customer",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Yummi",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "customer@yummi.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/{{v}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{v}}",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "currencies",
+			"item": [
+				{
+					"name": "update-rates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9c3e4e20-391c-4ffa-b0f5-c68ff7d11952",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "34efa69e-9a8c-4ec6-b936-7d7cbcedab93",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2d253948-de29-4e66-aa60-780135c47429",
+			"key": "url",
+			"value": "localhost:8000",
+			"type": "string"
+		},
+		{
+			"id": "54bf195f-1183-42c2-a077-ff3753b91d34",
+			"key": "v",
+			"value": "v1",
+			"type": "string"
+		},
+		{
+			"id": "5717208f-4113-4529-a2f3-6a884c7feef1",
+			"key": "token",
+			"value": "vkFyQJIMYeIetWrXUmWpBYWqpYzMBHUhBEMmMfdSciDR6aBTQcQedJeoAREDV5bfhhBoS0OdItjLlQyl",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
